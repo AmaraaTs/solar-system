@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+  background-image: url("https://i.pinimg.com/originals/6a/5c/af/6a5cafc0333bc51d953a22841441bf6d.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  width: 1100px;
+  height: 1100px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .mercury,
+.venus,
+.earth,
+.moon,
+.mars,
+.jupiter,
+.saturn,
+.uranus,
+.neptune {
+    position: absolute;
+    border-radius: 50%;
+    border-color: white transparent transparent transparent;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0 0;
+} */
+
+/* .earth::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+}
+
+.earth::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+} */
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sun {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 3em rgb(255, 140, 32);
+  background-image: url("https://static.pexels.com/photos/87611/sun-fireball-solar-flare-sunlight-87611.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 130% 130%;
+}
+
+.mercury,
+.venus,
+.earth,
+.mars,
+.jupiter,
+.saturn,
+.uranus,
+.neptune {
+  border-radius: 50%;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 105% 105%;
+}
+
+.orbit {
+  border-radius: 50%;
+  border: 0.5px solid white;
+  position: absolute;
+}
+
+.mercury-orbit {
+  width: calc(200px + 100px);
+  height: calc(200px + 100px);
+  animation: orbit 8.7s linear infinite;
+}
+
+.venus-orbit {
+  width: calc(300px + 100px);
+  height: calc(300px + 100px);
+  animation: orbit 22.4s linear infinite;
+}
+
+.earth-orbit {
+  width: calc(400px + 100px);
+  height: calc(400px + 100px);
+  animation: orbit 36.5s linear infinite;
+}
+
+.mars-orbit {
+  width: calc(500px + 100px);
+  height: calc(500px + 100px);
+  animation: orbit 68.6s linear infinite;
+}
+
+.jupiter-orbit {
+  width: calc(600px + 100px);
+  height: calc(600px + 100px);
+  animation: orbit 432.8s linear infinite;
+}
+
+.saturn-orbit {
+  width: calc(700px + 100px);
+  height: calc(700px + 100px);
+  animation: orbit 1075.2s linear infinite;
+}
+
+.uranus-orbit {
+  width: calc(800px + 100px);
+  height: calc(800px + 100px);
+  animation: orbit 3066.3s linear infinite;
+}
+.neptune-orbit {
+  width: calc(900px + 100px);
+  height: calc(900px + 100px);
+  animation: orbit 6014.8s linear infinite;
+}
+
+.earth {
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQwItShIroRfksXjTSKdSpUnjXdqUb7qp2q9BrtB4zhUJziY84zNfBaiZdg7g&s=19");
+  animation: orbit 1s linear infinite;
+}
+
+.moon {
+  width: 5px;
+  height: 5px;
+  /* background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFwAXAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAABgMEBQcCAf/EADYQAAIBAwIDBgQEBQUAAAAAAAECAwAEERIhBTFBBhMiUWGRcYGh8BQyweFCUrHR8RUkQ2Ki/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFxEBAQEBAAAAAAAAAAAAAAAAABEBMf/aAAwDAQACEQMRAD8A4bRRRQFFTW1tJcvoiXPUnoo8z5Vt2fDbaBgZVE7+bflHwHX5+1Bh29vPcyd3bQySvjOmNSx9hWrD2U4/MmtOEXen/tGV/rThw6X8PAC0720PMxxAAH9/SpBxm2P8dxk4xqfUf2osId3wDjFmjSXXC7yONRku0LaQPjjFZtde4fxi7RkNreyhz+VZBsD5bGjjX4Hi7MvG+HQ9/jSZo00P8Qw3PzyKEchopp432OntYJLzhTteWiDU4AzJGOpIHMeo9sb0rUQUUUUBU9layXc4iiG/NmPJR1J9Kgpq4dYmy4H37bS3WGPno6D58/byoPCJHbxrDb8hvq6sfM1dMCQxIxkUsy5ODnHTB9aoAFW32q8sTC3DNsCRhjRXgtqxgknGB6V5RcH961Bw+QwoV3ONQGPeoTbSxnKgjmNhUH2z8b9RvtimKKWC4gSWd1TB05J5nPLf9az7OGR4Qzabd4+eofm+VZfEJlNw0aMSiHw55etAw2xFrxDvbd2Rk3bSefypc7cdnYgr8W4ZGqxneeFOQ83X0zzHTnViynY3MUcsunIKhtPI9BTRa28n4RFmClgN9s5yN8++KL1xc7V8rY7VcJHB+MTW6A9yfHFnop6fI5HyrHqsrFhb/iryG35d44UkdATuaduLzBrXQmAFIDL5eQ9jSp2bx/rVtnpqP/k043kIntpEUjVqBG2xPI/p9KDATI0j2rUS776KOLmq8hy3qqLRzkx5ZVBPxAr3btGsMhbVqA2CnY/YqK3Le8e2ty8KqwKkNrXOBWfc3ffKiaTlj8cV9tChgldjnSMsCfv0rQtOFw3MAkRtRZchf5T5c6CjcQ3sMAZ314J/J02/xXlYEmiEpDxqqZZmA2b+2SPXemPhdkRA63TBujeEcvjUPaW2jS1cWyhYsZB9etAswMn4qMs4Kh8k05WXEmuo2MYVip0uOuMDBP19qRSp3Cg/Mb1vdlbhoZ2ifGmUMu5HPT5fX5UMUe38cV7wyG+hIZ4ZyjleQDD+4HvSDTpxJJU4JxRZQQAEXf8AmDj9KS6qa0uzrhONWhbkX08/MEfrXRVihmtVUNiXVgqBXK4pGikWRDh0YMp8iK6LZXCzpHPFjRINWeeOvL6UXFXi0z27dxGiKCmH23Oc/flXm2ERZZsq8jjOGG2Sd8/CtC8CX7pqjySOag7n1r5DYmW4EZQxw5wrA8gRgsfvpUGYJTGGQYyy6SSv35Uw8LhkFoAyMgOCg5Ny2JqmOzN6Z2jQhtBz5gb0zx8OkitcM20S/wAP8RH0oPNpIERg6ISeRII0jb6/2q3PGqWcuYhM55KGzsemPOoO6miDNNJjV4sZz9mpbOdRHJzYFcAjmSNxvRStZWMTyXM0sIOcgIOSeZHnj1rJuJTZylLcnwsCDzJ61t2F1K/EHbUqoi+JOh3wPfIrOmsQ/EwHOiNznIycDz3oip2nvBNwSZh4BJoGg89WoH+gpEpk7YThXgs0OyDUfXoP196W6qCmPsvxLSfwUrYUkmNj0PlS5X1SVIIJBG4I6UHSoZDCY9IOjVjSTmtm1MfeBsgBhk9KUezvGre8Rba9ws+MZP8AyevoabrYGKRSNiRlcnP+ai4ZbWRYiFIHQbkkjapLyUuzPqzkYzg+HeqXftBGmSANPhyeew51FdXHejQNYyBuKKikMKtrcO2DsGO2f0rxJPqHc5DIei+EZ9a8d5KxIaTGSPGVz8BUNw8cKgvKoOOhBP0oIzZmZTIoIKjYAdBvWDxBouGxGSRiNC5ck8/StS+7SQWNk6nSq9dR3J+A61zbjnF5OKz6jlYlPhU0RSu7h7q5knkPic5+HkKhooqoKKKKAre4V2pvbFVil/3EI20scED0NYNFB1Dh3bXhNwirdSy2zAYAZcj3FXZu0HCGXKcQh0+XeVyKii10677T8LhXw3ofz0ZOfalniPappCy2aHTyDSAZpXoolTXNzNdSd5PIXb1qGiigKKKKD//Z"); */
+  background-color: white;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mercury {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  background-image: url("https://scx2.b-cdn.net/gfx/news/hires/2015/whatsimporta.jpg");
+}
+
+.venus {
+  width: 35px;
+  height: 35px;
+  margin-top: -17.5px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTL1Dp_s0h_9lRKbT-xrz_0J6OjuytTZxGSupEtKd1RnCq0ldnKXiY&usqp=CAE&s=19");
+}
+
+.mars {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI5zG4JF5PnMl1xmuboLAPsP384sifO6TD6c2EBCE&usqp=CAE&s");
+}
+.jupiter {
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFwAXAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAFBgAEBwMBAv/EADMQAAEDAwIEBAQFBQEAAAAAAAEAAgMEBRESIQYxQVEiYXGhEzKBkRVSgsHwFCMzQrEH/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EAB8RAQEBAAICAgMAAAAAAAAAAAABAhFBElEhMQMTYf/aAAwDAQACEQMRAD8Aw1ReqIPFFZpKKWqdhjcN/MUx2+wMGC5ut3dyBWjikk/xsc70C7CgqiNoH/ZaFTWjDRhuPJdKC1Vrpp21tNEyMO/svY7Otu/RTmLwzZ9LPH88Lx+lcVrhsrXD5PZDLhwtBM06ogD3GxTmHDNlEau3D1VQZewGSMc+4QZVHii9UQRXrZQOrJRkHQDv5qpDGZZGsHMlPnD9saxjQBn6IsWLVamRsaMbBMlFQM7bK3bqD5fAB6lMVHQDbLQB35/ss2VfKBEFu5ANCsttjgN2AHOAmano42gY2+wV6OCHGSBjlnGViyd1fK9Qp/hUriAGj6dFzdZ5RnIx5kBOJEIbnUGjrkKhUVdMAQx5ce4bsnl+P2vG70R6+zlzXBwz+lZpxbw26kL6qmZ4eb2Ae4W31lRERtgnHdLF4jbKx4Ldj55W86zfpjWdRhSiJX+g/D7g+NoxG7xM8vJDVpBOwxB9TqPTYLRrVIyPSMfVInDTNTu26frfAXYaHgDuprnhrPHZjpq6NrRoZg9+6vw1tS9wDX4LjtzAC5UApYYgDGJHefL3RKGq/wBWtYxvXSuOs+66Tcn1FZ09Vn5nN9Xc11jfXyjAEuknryV5r4QBpja45ydv3RFlYWRAwwgN7k7LEmFv5dBMdtrZ9iceoVmSxSsi1T1TBgbDCtOqKp3zTNiafQKvI/ILhM0u5HUDlbkz1GLvXsKmoYy7SyQkdXEYyfJDqyijjad/sUYmcC3PxBnthCqsEDJzpzjcYXXLndVmX/oVAGQRzD5mP9j/AAJEWmceAOtk3PYZ39Vma3Ug3w5JpkI81oNrkDtIGo+gWX2uf4NS3PIrRrLVNdG1oeW+YU1fhqGylD3Bvg38yi1PqYQXmJuOmMlCqGB0gBdMMJioKCk2LpHE+QwuVxa1zI+I5I2EkguydiujpS8nDH889D7ovBDbYP8AIATy8T8ewVsV9tgb4I4xgdGZT9dPPIExsrWkMpc6vCMjJH8+qsMtlxe0aYtI57tGPdGBeG4/twPDc4yQGhcJbzORlsOPUhXwk7Z8/wCBE9ormt3J2H5kv3GCWHIkBTHU3WRzMuwCemeSWrrch8IiQ7/9WsyF1fTOuPpfhUJjcRqe4DH1ys9THxtcBV3AQxnwRbn1P890uLdZj0HByOYTRw/cgcNc7DhzGUrL7ikdE8PYcEKK2OgugDBlwB6bpjoriMAku37nCx+0XwbNe7S5NNHd2kDxlSjRBcI/iNDWwgn/AGwT919/iGMhukEbAgbFJ0N2BwcZ9SrIu5A20hZsX4M/9fOBzdpPQDC41FQ9zRqLhnpqwlt96k6yY77qlUXl2N5E4B2qqRG07jPfKS+Kb+KWBwa4GR2zW9yqF74lEQc1rtcnRoKSqqplqpjLM4ucfZaiX5c5Huke57zqc45J7lfKiio8UUUQegkclbprlUQcnah2KpqIGGDiHT87XBWRxLEPzfYpVUQM03E+2I2OPshdXequoGkP0N7N5/dDVEHpJJyea8UUQRRRRB//2Q==");
+}
+.saturn {
+  width: 45px;
+  height: 45px;
+  margin-top: -22.5px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQyGvr569Bj63EohN-9FnrHiL4RO0b3tcLMA&s");
+}
+.uranus {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  background-image: url("https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg?w=1720&h=1720&fit=clip&crop=faces%2Cfocalpoint");
+}
+.neptune {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  background-image: url("https://cdn.mos.cms.futurecdn.net/PezBzd9Fehsq9XWgWMauVV-1200-80.jpg");
+  background-size: cover;
+}
